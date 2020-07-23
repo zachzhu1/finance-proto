@@ -3,9 +3,18 @@ import { extend } from 'lodash';
 
 const yqlUrl: string = 'https://query.yahooapis.com/v1/public/yql';
 export const environment = extend(base, {
-  production: true,
+  production: false,
   analytics: 'ANALYTICS_ID',
-  paths: {
+  paths:{
+    charts: './assets/json/chart/$stock/$range.json',
+    news: './assets/json/news/$stock.json',
+    //proxy: 'http://www.marinpetkov.com/proxy.php',
+    search: './assets/json/search.json',
+    stocks: './assets/json/stocks.json',
+    info: './assets/json/info/$stock.json'
+  }
+
+/*   paths: {
     charts: 'https://query1.finance.yahoo.com/v7/finance/chart/$stock?range=$range&interval=$interval&indicators=quote&' +
     'includeTimestamps=true&includePrePost=false&corsDomain=finance.yahoo.com',
     news: 'https://query1.finance.yahoo.com/v2/finance/news?lang=en-US&region=US&symbols=$stock&corsDomain=finance.yahoo.com',
@@ -23,5 +32,5 @@ export const environment = extend(base, {
     '&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys',
     info: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in' +
     '%20(%22$stock%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback='
-  }
+  } */
 });
